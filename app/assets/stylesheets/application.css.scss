@@ -17,6 +17,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  font-family: 'Arvo', serif;
+  padding-top: 70px;
+  padding-left: 70px;
+
+}
+
+li {
+  list-style-type:none
+}
+
 #user_header {
   float: right;
 }
