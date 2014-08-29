@@ -4,7 +4,7 @@
 <ul>
   <% @links.each do |link| %>
     <li><%= link_to link.name, url_for(link.url)%>
-        <ul><li>by <%=link.user%></li></ul>
+        <ul><li>by <%=link.user.name%></li></ul>
     </li>
   <%end%>
 </ul>

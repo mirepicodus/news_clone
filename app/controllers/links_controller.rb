@@ -11,7 +11,7 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = Link.new(link_params)
+    @link = Link.new(link_params.merge user_id: current_user.id)
     if @link.save
       redirect_to root_path, notice: "Thanks for submitting!"
     else
@@ -21,7 +21,7 @@ class LinksController < ApplicationController
 
 private
   def link_params
-    params.require(:link).permit(:name, :url, :current_user)
+    params.require(:link).permit(:name, :url, :user_id)
   end
 
 end
