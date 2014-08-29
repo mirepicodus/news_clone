@@ -24,7 +24,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="">Submit New Link</a></li>
+        <li><%= link_to "Submit Link", new_link_path %></li>
         <% if current_user %>
           <li><a href="">Logged in as <%= current_user.name %></a></li>
           <li><%= link_to "Log Out", logout_path %></li>
