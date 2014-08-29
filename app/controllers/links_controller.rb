@@ -3,7 +3,7 @@ class LinksController < ApplicationController
   before_filter :authorize, only: [:new, :edit, :update]
 
   def index
-    @links = Link.all
+    @links = Link.all.sort {|x, y| y.rank <=> x.rank}
   end
 
   def new
@@ -17,6 +17,13 @@ class LinksController < ApplicationController
     else
       render "new"
     end
+  end
+
+  def upvote
+    @links = Link.all.sort {|x, y| y.rank <=> x.rank}
+    link = Link.find(params[:id])
+    link.update(votes: link.votes + 1)
+    redirect_to root_path, notice: "Thanks for voting."
   end
 
 private

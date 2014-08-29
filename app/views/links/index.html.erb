@@ -1,10 +1,9 @@
 <% content_for(:title, "Links | Hacker Clone") %>
 
-<h1>Links</h1>
 <ul>
   <% @links.each do |link| %>
-    <li><%= link_to link.name, url_for(link.url)%>
-        <ul><li>by <%=link.user.name%></li></ul>
+    <li><%= link_to "+", upvote_path(:id => link.id) %><%= link_to link.name, url_for(link.url)%>
+        <ul><li>Votes: <%= link.votes %> by <%=link.user.name%> <%= link.age %> hours ago</li></ul>
     </li>
   <%end%>
 </ul>

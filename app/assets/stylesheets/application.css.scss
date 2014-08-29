@@ -24,8 +24,13 @@ body {
 }
 
 li {
-  list-style-type:none
+  list-style-type: none
 }
+
+ul {
+    list-style:none;
+    padding-left:0;
+}​
 
 #user_header {
   float: right;
